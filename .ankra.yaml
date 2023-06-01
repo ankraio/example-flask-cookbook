@@ -1,0 +1,31 @@
+stages:
+  build:
+    - image
+  deploy:
+    - cookbook
+
+variables:
+  - name: TARGET
+    value: "default"
+    description: "Target cluster to deploy to"
+
+build:
+  target:
+    match:
+      name: $TARGET  
+  image:
+    docker:
+      actions:
+        - action: build
+          tag: $COMMIT_ID
+deploy:
+  target:
+    match:
+      name: $TARGET
+  cookbook:
+    kubernetes:
+      actions:
+        - action: deploy
+          name: cookbook
+          public: true
+          framework: flask

@@ -1,0 +1,16 @@
+{% extends "_base.html" %}
+{% block title %}
+<title>Cook Book / Home</title>
+{% endblock %}
+{% block pageContent %}
+<!--begin::Page Content-->
+<div>
+    <span>
+        Welcome to your new Cook Book!
+    </span>
+</div>
+<div>
+    <a href="{{ url_for('recipes_bp.get_recipes') }}">Check out our recipes!</a>
+</div>
+<!--end::Page Content-->
+{% endblock %}

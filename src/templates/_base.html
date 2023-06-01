@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<!--begin::Head-->
+	<head><base href="">
+		<meta charset="utf-8" />
+		{% block title %}
+        {% endblock %}
+		<meta name="description" content="Cook Book holding all the best recipes" />
+        <meta name="keywords" content="Cook Book, Recipes" />
+        <!-- <link rel="canonical" href="https://cookbook.io" /> -->
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="shortcut icon" href="/static/assets/media/fav-icon/favicon.ico" />
+		<!--begin::Fonts-->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+		<!--end::Fonts-->
+		<!--begin::Global Stylesheets Bundle(used by all pages)-->
+		<!-- <link href="/static/assets/css/style.bundle.css" rel="stylesheet" type="text/css" /> -->
+        <script src="https://kit.fontawesome.com/272afddff8.js" crossorigin="anonymous"></script>
+        <!--begin::Page Custom stylesheet-->
+        {% block stylesheet %}
+        {% endblock %}
+        <!--end::Page Custom stylesheet-->
+		<!--end::Global Stylesheets Bundle-->
+	</head>
+	<!--end::Head-->
+	<!--begin::Body-->
+	<body id="ck_body">
+		<!--begin::Main-->
+		<div class="d-flex flex-column flex-root">
+        {% block pageContent %}
+        {% endblock %}
+        </div>
+        <!--end::Main-->
+    </body>
+    <!--end::Body-->
+<!--begin::Javascript-->
+{% block javascript %}
+{% endblock %}
+<!--end::Javascript-->
+</html>
